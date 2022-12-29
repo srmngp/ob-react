@@ -8,6 +8,7 @@ import Example4 from './hooks/Example4';
 import GreetingStyled from './components/pure/greetingStyled';
 import TaskComponent from './components/pure/task';
 import Father from './components/container/father';
+import OptionalRender from './components/pure/OptionalRender';
 
 function App() {
   return (
@@ -37,9 +38,11 @@ function App() {
 
       {/* </header> */}
 
-      <TaskList></TaskList>
+      {/* <TaskList></TaskList> */}
 
       {/* <Father></Father> */}
+
+      <OptionalRender></OptionalRender>
 
     </div>
   );
