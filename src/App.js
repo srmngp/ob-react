@@ -9,6 +9,7 @@ import GreetingStyled from './components/pure/greetingStyled';
 import TaskComponent from './components/pure/task';
 import Father from './components/container/father';
 import OptionalRender from './components/pure/OptionalRender';
+import LoginFormik from './components/pure/forms/loginFormik';
 
 function App() {
   return (
@@ -42,7 +43,9 @@ function App() {
 
       {/* <Father></Father> */}
 
-      <OptionalRender></OptionalRender>
+      {/* <OptionalRender></OptionalRender> */}
+
+      <LoginFormik></LoginFormik>
 
     </div>
   );

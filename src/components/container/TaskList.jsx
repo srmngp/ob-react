@@ -13,12 +13,14 @@ const TaskList = () => {
     const defaultTask3 = new Task('Example 3', 'Some Desc 3', false, LEVELS.BLOCKING)
 
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         console.log('Task state has been modified');
 
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000)
 
         return () => {
             console.log('Unmounting task component');
@@ -54,6 +56,46 @@ const TaskList = () => {
         setTasks(tempTask)
     }
 
+    const loadingStyle = {
+        color: 'grey',
+        fontSize: '30px',
+        fontWeight: 'bold'
+    }
+
+    const Table = () => {
+        return (
+            <table>
+                <thead>
+                    <tr>
+                        <th scope='col'>Title</th>
+                        <th scope='col'>Description</th>
+                        <th scope='col'>Priority</th>
+                        <th scope='col'>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tasks.map((task, index) => {
+                        return (
+                            <TaskComponent
+                                task={task}
+                                key={index}
+                                complete={completeTask}
+                                remove={removeTask}
+                            />)
+                    })}
+                </tbody>
+            </table>
+        )
+    }
+
+    let tasksTable = <Table />
+
+    if (tasks.length > 0) {
+        tasksTable = <Table />
+    } else {
+        tasksTable = <h3>There are no tasks</h3>
+    }
+
     return (
         <div>
             <div className='col-12'>
@@ -64,34 +106,11 @@ const TaskList = () => {
                         </h5>
                     </div>
                     <div className='card-body' data-mbd-perfect-scrollbar='true' style={{ position: 'relative', height: '400px' }}>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope='col'>Title</th>
-                                    <th scope='col'>Description</th>
-                                    <th scope='col'>Priority</th>
-                                    <th scope='col'>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    tasks.map((task, index) => {
-                                        return (
-                                            <TaskComponent
-                                                task={task}
-                                                key={index}
-                                                complete={completeTask}
-                                                remove={removeTask}
-                                            >
-                                            </TaskComponent>)
-                                    })
-                                }
-                            </tbody>
-                        </table>
+                        {loading ? (<p style={loadingStyle}>Loading tasks...</p>) : (tasksTable)}
                     </div>
                 </div>
             </div>
-            <TaskForm add={addTask}></TaskForm>
+            <TaskForm add={addTask} tasksNumber={tasks.length}></TaskForm>
         </div>
     );
 }

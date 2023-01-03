@@ -9,13 +9,13 @@ const Father = () => {
         alert(`Message recieved ${text}`)
     }
 
-    function unpdateName(newName) {
+    function updateName(newName) {
         setName(newName)
     }
 
     return (
         <div style={{ background: 'tomato', padding: '10px' }}>
-            <Child name={name} send={showMessage} update={unpdateName}></Child>
+            <Child name={name} send={showMessage} update={updateName}></Child>
         </div>
     );
 }
