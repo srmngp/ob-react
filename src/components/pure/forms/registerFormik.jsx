@@ -16,7 +16,7 @@ const RegisterFormik = () => {
         confirm: ''
     }
 
-    const resgisterScherma = Yup.object().shape(
+    const registerSchema = Yup.object().shape(
         {
             name: Yup.string()
                 .min(4, 'Min 4 characters')
@@ -49,7 +49,7 @@ const RegisterFormik = () => {
             <h4>Register Formik</h4>
             <Formik
                 initialValues={initialValues}
-                validationSchema={resgisterScherma}
+                validationSchema={registerSchema}
                 onSubmit={async (values) => {
                     await new Promise((r) => setTimeout(r, 500))
                     alert(JSON.stringify(values, null, 2))
