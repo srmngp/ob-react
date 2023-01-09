@@ -5,6 +5,16 @@ const HomePage = () => {
 
     const location = useLocation()
     const navigation = useNavigate()
+    
+    const navigateProps = (path) => {
+        navigation({
+            pathname: path,
+            search: '?online=true',
+            state: {
+                online: true
+            }
+        })
+    }
 
     const goTo = (path) => {
         navigation(path)
@@ -27,6 +37,8 @@ const HomePage = () => {
                 <button onClick={() => goTo('/profile')}>Profile</button>
                 <button onClick={() => goBack()}>Back</button>
                 <button onClick={() => goForward()}>Forward</button>
+                <button onClick={() => navigateProps('/statePage')}>State page with params</button>
+
             </div>
         </div>
     );
