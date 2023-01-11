@@ -11,6 +11,8 @@ import Father from './components/container/father';
 import OptionalRender from './components/pure/OptionalRender';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
+import AsyncExample from './components/pure/AsyncExample';
+import ObservableExample from './components/pure/ObservableExample';
 
 function App() {
   return (
@@ -48,8 +50,11 @@ function App() {
 
       {/* <LoginFormik></LoginFormik> */}
 
-      <RegisterFormik></RegisterFormik>
+      {/* <RegisterFormik></RegisterFormik> */}
 
+      {/* <AsyncExample /> */}
+
+      <ObservableExample />
     </div>
   );
 }

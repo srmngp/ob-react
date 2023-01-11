@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 const DashBoard = () => {
     const navigate = useNavigate()
 
-
     const logout = () => {
         navigate('/login')
     }
