@@ -13,32 +13,33 @@ import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
 import AsyncExample from './components/pure/AsyncExample';
 import ObservableExample from './components/pure/ObservableExample';
+import FetchExample from './components/pure/FetchExample';
 
 function App() {
   return (
     <div className="App">
       {/* <header className="App-header"> */}
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
-        {/* <Greeting name="Manwel"></Greeting> */}
+      {/* <Greeting name="Manwel"></Greeting> */}
 
-        {/* <GreetingF name="Manwel"></GreetingF> */}
+      {/* <GreetingF name="Manwel"></GreetingF> */}
 
-        {/* <TaskList></TaskList> */}
+      {/* <TaskList></TaskList> */}
 
-        {/* <ComponentA></ComponentA> */}
+      {/* <ComponentA></ComponentA> */}
 
-        {/* <Example2></Example2> */}
+      {/* <Example2></Example2> */}
 
-        {/* <ContextComponent></ContextComponent> */}
+      {/* <ContextComponent></ContextComponent> */}
 
-        {/* <Example4 name="Manu" >
+      {/* <Example4 name="Manu" >
           <h3>
             props.children content:
           </h3>
         </Example4> */}
 
-        {/* <GreetingStyled name="Manwel"></GreetingStyled> */}
+      {/* <GreetingStyled name="Manwel"></GreetingStyled> */}
 
       {/* </header> */}
 
@@ -54,7 +55,8 @@ function App() {
 
       {/* <AsyncExample /> */}
 
-      <ObservableExample />
+      {/* <ObservableExample /> */}
+      <FetchExample />
     </div>
   );
 }
