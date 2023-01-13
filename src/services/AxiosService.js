@@ -1,8 +1,8 @@
-import axiosrequest from "../utils/config/axios.config";
+import axiosRequest from "../utils/config/axios.config";
 
 export function getRandomUser() {
     //axiosrequest.post('/login', body)
-    return axiosrequest.get('/', {
+    return axiosRequest.get('/', {
         validateStatus: function (status) {
             return status < 500
         }
