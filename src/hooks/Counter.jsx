@@ -1,4 +1,4 @@
-import React, { useReducer, useContext, useState } from 'react';
+import React, { useReducer, useContext } from 'react'
 
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
@@ -15,8 +15,6 @@ const Points = () => {
 }
 
 const Counter = () => {
-
-    
 
     const initState = {
         count: 0
@@ -64,7 +62,7 @@ const Counter = () => {
 
             </div>
         </myContext.Provider>
-    );
+    )
 }
 
-export default Counter;
+export default Counter
